@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :users_backoffice do
+    get 'welcome/index'
+  end
 
   devise_for :users
 
@@ -11,5 +14,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root 'users_backoffice/welcome#index'
 end
