@@ -1,4 +1,4 @@
-<div class="mx-auto">
+<div class="mx-auto w-2/5">
   <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
       <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
@@ -21,7 +21,7 @@
         <div class="flex items-center justify-between">
           <%= f.label :password, 'Senha', class: 'block text-sm font-medium leading-6 text-gray-900' %><br/>
           <div class="text-sm">
-            <%= link_to 'Esqueceu a senha?', site_index_path,  class: "font-semibold text-indigo-600 hover:text-indigo-500" %>
+            <%= link_to 'Esqueceu a senha?', new_password_path(resource_name),  class: "font-semibold text-indigo-600 hover:text-indigo-500" %>
           </div>
         </div>
         <div class="mt-2">
