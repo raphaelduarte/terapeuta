@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'site/index'
   devise_for :admins
+  resources :admins
+  resources :users 
   namespace :admins_backoffice do
     get 'welcome/index'
   end
