@@ -5,11 +5,8 @@
       <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Faça o login na sua conta aqui</h2>
     </div>
 
-    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-
-    </div>
-
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'space-y-6') do |f| %>
+    <div class="block mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'space-y-6') do |f| %>
       <div>
         <%= f.label :email, class: 'block text-sm font-medium leading-6 text-gray-900' %><br/>
         <div class='mt-2'>
@@ -41,8 +38,10 @@
       </div>
       <% end %>
     <% end %>
-
-
-    <%= render "devise/shared/links" %>
+    <div class="block">
+      <%= render "devise/shared/links"%>
+    </div>
+    
+    </div>  
   </div>
 </div>
