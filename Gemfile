@@ -26,6 +26,9 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+#Rest Client
+gem 'rest-client', '~> 2.1'
+
 #Devise
 gem 'devise', '~> 4.2'
 
