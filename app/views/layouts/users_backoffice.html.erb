@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="h-full bg-white">
+  <head>
+    <title>Terapeuta</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="h-full">
+    <main class="mx-auto mt-0 px-0 flex">
+      <%= yield %>
+    </main>
+  </body>
+</html>

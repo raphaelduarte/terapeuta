@@ -1,4 +1,3 @@
 class SiteController < ApplicationController
-  def index
-  end
+  layout 'site'
 end
