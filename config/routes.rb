@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  post 'services/addressAPI', to: 'configuracao#busca_cep'
+
   namespace :site do
     get 'welcome/index'
   end 

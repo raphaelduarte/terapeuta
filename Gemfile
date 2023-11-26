@@ -29,6 +29,9 @@ gem "jbuilder"
 #Rest Client
 gem 'rest-client', '~> 2.1'
 
+#JSON
+gem 'json', '~> 2.6', '>= 2.6.3'
+
 #Devise
 gem 'devise', '~> 4.2'
 
