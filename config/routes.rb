@@ -7,6 +7,14 @@ Rails.application.routes.draw do
     get 'welcome/index'
   end
   namespace :users_backoffice do
+    namespace :welcome do
+      get 'configuracao/index'
+      get 'plano/index'
+      get 'mensagem/index'
+      get 'anamnese/index'
+      get 'consulta/index'
+      get 'paciente/index'
+    end
     get 'welcome/index'
   end
 

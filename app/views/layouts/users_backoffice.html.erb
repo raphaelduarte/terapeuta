@@ -2,7 +2,9 @@
 <html class="h-full bg-white">
   <head>
     <title>Terapeuta</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
@@ -15,7 +17,14 @@
 
   <body class="h-full">
     <main class="mx-auto mt-0 px-0 flex">
-      <%= yield %>
+      <div class="flex">
+        <%= render 'users_backoffice/welcome/sidebar'%>
+        <div class="flex-1 p-6">
+          <%= yield %>
+        </div>
+        
+      </div>
+      
     </main>
   </body>
 </html>
