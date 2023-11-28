@@ -146,6 +146,8 @@ GEM
     minitest (5.20.0)
     msgpack (1.7.2)
     mutex_m (0.2.0)
+    net-http (0.4.0)
+      uri
     net-imap (0.4.5)
       date
       net-protocol
@@ -157,10 +159,14 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.6.0)
+    nokogiri (1.15.5-x64-mingw-ucrt)
+      racc (~> 1.4)
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
+    openssl (3.2.0)
     orm_adapter (0.5.0)
     pg (1.5.4)
+    pg (1.5.4-x64-mingw-ucrt)
     psych (5.1.1.1)
       stringio
     public_suffix (5.0.4)
@@ -235,6 +241,8 @@ GEM
     stimulus-rails (1.3.0)
       railties (>= 6.0.0)
     stringio (3.0.9)
+    tailwindcss-rails (2.0.32-x64-mingw-ucrt)
+      railties (>= 6.0.0)
     tailwindcss-rails (2.0.32-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.3.0)
@@ -245,6 +253,9 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2023.3)
+      tzinfo (>= 1.0.0)
+    uri (0.13.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -262,6 +273,7 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
+  x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES
@@ -272,6 +284,8 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   json (~> 2.6, >= 2.6.3)
+  net-http
+  openssl
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.2)
@@ -282,6 +296,7 @@ DEPENDENCIES
   tailwindcss-rails (~> 2.0)
   turbo-rails
   tzinfo-data
+  uri
   web-console
 
 RUBY VERSION

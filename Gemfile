@@ -29,6 +29,12 @@ gem "jbuilder"
 #Rest Client
 gem 'rest-client', '~> 2.1'
 
+gem 'uri'
+
+gem 'net-http'
+
+gem 'openssl', git: 'https://github.com/ruby/openssl'
+
 #JSON
 gem 'json', '~> 2.6', '>= 2.6.3'
 

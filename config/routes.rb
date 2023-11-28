@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   namespace :users_backoffice do
     namespace :welcome do
+      post 'services/zapi', to: 'mensagem#envia_mensagem'
       get 'configuracao/index'
       get 'plano/index'
       get 'mensagem/index'
