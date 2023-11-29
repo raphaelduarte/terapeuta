@@ -5,5 +5,4 @@ class UsersBackoffice::Welcome::MensagemController < UsersBackofficeController
   def envia_mensagem
     Zapi.whatsapp_api(params[:mensagem])
   end
-
 end

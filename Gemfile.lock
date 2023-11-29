@@ -97,6 +97,9 @@ GEM
     connection_pool (2.4.1)
     crass (1.0.6)
     date (3.3.4)
+    debase (0.2.5.beta2)
+      debase-ruby_core_source (>= 0.10.12)
+    debase-ruby_core_source (3.2.3)
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
@@ -110,6 +113,8 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
+    ffi (1.16.3)
+    ffi (1.16.3-x64-mingw-ucrt)
     globalid (1.2.1)
       activesupport (>= 6.1)
     http-accept (1.7.0)
@@ -163,7 +168,6 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
-    openssl (3.2.0)
     orm_adapter (0.5.0)
     pg (1.5.4)
     pg (1.5.4-x64-mingw-ucrt)
@@ -225,6 +229,8 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.6)
+    ruby-debug-ide (0.7.3)
+      rake (>= 0.8.1)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.15.0)
@@ -279,17 +285,20 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  debase (= 0.2.5.beta2)
+  debase-ruby_core_source (~> 3.2, >= 3.2.3)
   debug
   devise (~> 4.2)
+  ffi (~> 1.16, >= 1.16.3)
   importmap-rails
   jbuilder
   json (~> 2.6, >= 2.6.3)
   net-http
-  openssl
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.2)
   rest-client (~> 2.1)
+  ruby-debug-ide
   selenium-webdriver
   sprockets-rails
   stimulus-rails

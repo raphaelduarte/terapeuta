@@ -33,7 +33,14 @@ gem 'uri'
 
 gem 'net-http'
 
-gem 'openssl', git: 'https://github.com/ruby/openssl'
+gem 'ruby-debug-ide'
+
+gem 'debase', '0.2.5.beta2'
+
+gem 'debase-ruby_core_source', '~> 3.2', '>= 3.2.3'
+
+gem 'ffi', '~> 1.16', '>= 1.16.3'
+
 
 #JSON
 gem 'json', '~> 2.6', '>= 2.6.3'
