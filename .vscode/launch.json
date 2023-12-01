@@ -4,6 +4,40 @@
     // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
+        {
+            "type": "ruby-debug",
+            "request": "launch",
+            "name": "Launch File",
+            "program": "${workspaceFolder}/${command:AskForProgramName}",
+            "programArgs": [],
+            "useBundler": false
+        },
+    {
+        "type": "rdbg",
+        "name": "Debug Rails Integrated with VSCode",
+        "rdbgPath": "bundle exec rdbg", // Use the debgug.gem in the Gemfile
+        "request": "launch",
+        "command": "bin/rails", // Brakpoint do not work with rails
+        // Abaixo, command com encerramento automático do serviço preso ou não finalizado anteriormente, antes de iniciar novamente o rails na porta 3000
+        // "command": "$([ ! -z $(lsof -i :3000 -t) ] && kill -TERM $(lsof -i :3000 -t) && [ ! -z $(lsof -i :3000 -t) ] && kill -9 $(lsof -i :3000 -t)) bin/rails", // Brakpoint do not work with rails
+        "script": "s", // lauch rails server with debugger
+        "args": [],
+        "askParameters": false // Do not ask startup parameter any more
+    },
+    {
+        "type": "rdbg",
+        "name": "Debug Rails with rdbg from Terminal",
+        "request": "attach"
+    },
+    {
+        "type": "ruby-debug",
+        "request": "launch",
+        "name": "Launch File",
+        "program": "${workspaceFolder}/${command:AskForProgramName}",
+        "programArgs": [],
+        "useBundler": false
+    },
     {
         "name": "Launch Edge",
         "request": "launch",
@@ -11,9 +45,19 @@
         "url": "http://localhost:3000",
         "webRoot": "${workspaceFolder}"
     },
+    {
+        "type": "rdbg",
+        "name": "Attach with rdbg (tcp 12345)", // Specify your favorite name
+        "request": "attach",
+        "debugPort": "localhost:3000",
+        "localfsMap": "/app:${workspaceFolder}"
+    },
+
+
+
         {
             "name": "Attach to Chrome",
-            "port": 9222,
+            "port": 3000,
             "request": "attach",
             "type": "chrome",
             "webRoot": "${workspaceFolder}"
@@ -74,6 +118,25 @@
             "type": "rdbg",
             "name": "Attach with rdbg",
             "request": "attach"
+        },
+        
+        {
+            "type": "ruby_lsp",
+            "name": "Debug Ruby LSP",
+            "request": "launch",
+            "program": "ruby ${file}"
+            },
+            {
+            "type": "ruby_lsp",
+            "request": "launch",
+            "name": "Debug test file",
+            "program": "ruby -Itest ${relativeFile}"
+            },
+            {
+            "type": "ruby_lsp",
+            "request": "attach",
+            "name": "Attach to existing server"
         }
+        
     ]
 }

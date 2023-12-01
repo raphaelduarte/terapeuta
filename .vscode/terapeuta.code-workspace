@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+	
+        "type": "ruby_lsp",
+        "request": "launch",
+        "name": "Debug program",
+        "program": "ruby "
+    
+	}
+}

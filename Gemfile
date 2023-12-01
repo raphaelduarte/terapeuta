@@ -33,13 +33,17 @@ gem 'uri'
 
 gem 'net-http'
 
-gem 'ruby-debug-ide'
 
-gem 'debase', '0.2.5.beta2'
-
-gem 'debase-ruby_core_source', '~> 3.2', '>= 3.2.3'
 
 gem 'ffi', '~> 1.16', '>= 1.16.3'
+
+gem 'openssl', '~> 3.2'
+
+gem "ruby-lsp"
+
+gem "rubocop"
+
+
 
 
 #JSON
@@ -69,11 +73,24 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+
+  gem 'debase'
+
+  gem 'rspec-rails'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+
+  gem 'debase-ruby_core_source', '~> 3.2', '>= 3.2.3'
+
+  gem 'rdbg', '~> 0.1.0'
+
+  gem 'debug'
+
+  gem "debugvisualizer", "~> 0.1.8"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
