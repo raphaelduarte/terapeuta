@@ -1,0 +1,2 @@
+class NomeCompleto < ApplicationRecord
+end
