@@ -1,0 +1,48 @@
+<div class="col-span-full">
+  <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Logradouro</label>
+  <div class="mt-2">
+    <input type="text" value="<%= @endereco_formatado['street']%>" name="street-address" id="street-address" autocomplete="street-address" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+  </div>
+</div>
+
+<div class="sm:col-span-2 sm:col-start-1">
+  <label for="number" class="block text-sm font-medium leading-6 text-gray-900">Número</label>
+  <div class="mt-2">
+    <input type="number" value="<%= @endereco_formatado['number']%>" name="number" id="number" autocomplete="number" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+  </div>
+</div>
+
+<div class="sm:col-span-2">
+  <label for="complement" class="block text-sm font-medium leading-6 text-gray-900">Complemento</label>
+  <div class="mt-2">
+    <input type="text" value="<%= @endereco_formatado['complement']%>" name="complement" id="complement" autocomplete="complement" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+  </div>
+</div>
+
+<div class="sm:col-span-2">
+  <label for="neigborhood" class="block text-sm font-medium leading-6 text-gray-900">Bairro</label>
+  <div class="mt-2">
+    <input type="text" value="<%= @endereco_formatado['neighborhood']%>" name="neigborhood" id="neigborhood" autocomplete="neigborhood" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+  </div>
+</div>
+
+<div class="sm:col-span-2">
+  <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Cidade</label>
+  <div class="mt-2">
+    <input type="text" value="<%= @endereco_formatado['city']%>" name="city" id="city" autocomplete="city" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+  </div>
+</div>
+
+<div class="sm:col-span-2">
+  <label for="state" class="block text-sm font-medium leading-6 text-gray-900">Estado</label>
+  <div class="mt-2">
+    <input type="text" value="<%= @endereco_formatado['state']%>" name="state" id="state" autocomplete="state" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+  </div>
+</div>
+
+<div class="sm:col-span-2">
+  <label for="country" class="block text-sm font-medium leading-6 text-gray-900">País</label>
+  <div class="mt-2">
+    <input type="text" value="Brasil" name="country" id="country" autocomplete="country" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+  </div>
+</div>

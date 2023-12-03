@@ -1,0 +1,42 @@
+<div id="<%= dom_id endereco %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Rua:</strong>
+    <%= endereco.street %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Número:</strong>
+    <%= endereco.number %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Complemento:</strong>
+    <%= endereco.complement %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Bairro:</strong>
+    <%= endereco.neigborhood %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Cidade:</strong>
+    <%= endereco.city %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Estado:</strong>
+    <%= endereco.state %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">País:</strong>
+    <%= endereco.country %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this endereco", endereco, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this endereco", edit_endereco_path(endereco), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

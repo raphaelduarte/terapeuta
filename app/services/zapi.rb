@@ -4,7 +4,6 @@ require 'openssl'
 require 'json'
 
 class Zapi
-
     def self.whatsapp_api(mensagem)
         url = URI("https://api.z-api.io/instances/3C6F79AD3C85709E3C46B222D950B483/token/C9EF541F12340D112FBCA858/send-text")
 
