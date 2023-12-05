@@ -1,0 +1,2 @@
+class HistoriaFamiliar < ApplicationRecord
+end

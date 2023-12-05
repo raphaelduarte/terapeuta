@@ -1,0 +1,2 @@
+class QueixaPrincipal < ApplicationRecord
+end

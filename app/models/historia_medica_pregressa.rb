@@ -1,0 +1,2 @@
+class HistoriaMedicaPregressa < ApplicationRecord
+end

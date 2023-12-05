@@ -1,0 +1,2 @@
+class RevisaoHabito < ApplicationRecord
+end

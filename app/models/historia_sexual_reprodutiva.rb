@@ -1,0 +1,2 @@
+class HistoriaSexualReprodutiva < ApplicationRecord
+end

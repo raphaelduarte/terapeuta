@@ -1,0 +1,2 @@
+class RevisaoSistema < ApplicationRecord
+end

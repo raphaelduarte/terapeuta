@@ -1,0 +1,2 @@
+class HistoriaDoencaAtual < ApplicationRecord
+end
