@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_05_231430) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_08_151102) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,6 +56,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_05_231430) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pessoa_id", null: false
+    t.index ["pessoa_id"], name: "index_quitemails_on_pessoa_id"
   end
 
   create_table "enderecos", force: :cascade do |t|
@@ -122,6 +124,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_05_231430) do
     t.string "sobrenome"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pessoa_id", null: false
+    t.index ["pessoa_id"], name: "index_nome_completos_on_pessoa_id"
   end
 
   create_table "notificacaos", force: :cascade do |t|
@@ -139,10 +143,18 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_05_231430) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pessoas", force: :cascade do |t|
+    t.string "tipoPessoa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "profissaos", force: :cascade do |t|
     t.string "profissao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pessoa_id", null: false
+    t.index ["pessoa_id"], name: "index_profissaos_on_pessoa_id"
   end
 
   create_table "queixa_principals", force: :cascade do |t|
@@ -170,6 +182,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_05_231430) do
     t.integer "numero"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pessoa_id", null: false
+    t.index ["pessoa_id"], name: "index_telefones_on_pessoa_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -180,8 +194,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_05_231430) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pessoa_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["pessoa_id"], name: "index_users_on_pessoa_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "emails", "pessoas"
+  add_foreign_key "nome_completos", "pessoas"
+  add_foreign_key "profissaos", "pessoas"
+  add_foreign_key "telefones", "pessoas"
+  add_foreign_key "users", "pessoas"
 end
