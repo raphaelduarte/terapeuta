@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   belongs_to :pessoa, inverse_of: :user
   before_validation :build_associated_pessoa, on: :create
-  after_destroy :destroy_pessoa
+  before_destroy :destroy_pessoa
 
   private
 

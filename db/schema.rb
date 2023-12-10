@@ -57,7 +57,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_08_151102) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "pessoa_id", null: false
-    t.index ["pessoa_id"], name: "index_quitemails_on_pessoa_id"
+    t.index ["pessoa_id"], name: "index_emails_on_pessoa_id"
   end
 
   create_table "enderecos", force: :cascade do |t|
