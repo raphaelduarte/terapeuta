@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_08_151102) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_10_230643) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,12 +44,23 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_08_151102) do
     t.integer "cnpj"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "documento_id", null: false
+    t.index ["documento_id"], name: "index_cnpjs_on_documento_id"
   end
 
   create_table "cpfs", force: :cascade do |t|
     t.integer "cpf"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "documento_id", null: false
+    t.index ["documento_id"], name: "index_cpfs_on_documento_id"
+  end
+
+  create_table "documentos", force: :cascade do |t|
+    t.bigint "pessoa_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pessoa_id"], name: "index_documentos_on_pessoa_id"
   end
 
   create_table "emails", force: :cascade do |t|
@@ -70,12 +81,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_08_151102) do
     t.datetime "updated_at", null: false
     t.string "country"
     t.string "neighborhood"
+    t.bigint "pessoa_id", null: false
+    t.index ["pessoa_id"], name: "index_enderecos_on_pessoa_id"
   end
 
   create_table "estado_civils", force: :cascade do |t|
     t.string "estadoCivil"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pessoa_id", null: false
+    t.index ["pessoa_id"], name: "index_estado_civils_on_pessoa_id"
   end
 
   create_table "historia_doenca_atuals", force: :cascade do |t|
@@ -200,7 +215,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_08_151102) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cnpjs", "documentos"
+  add_foreign_key "cpfs", "documentos"
+  add_foreign_key "documentos", "pessoas"
   add_foreign_key "emails", "pessoas"
+  add_foreign_key "enderecos", "pessoas"
+  add_foreign_key "estado_civils", "pessoas"
   add_foreign_key "nome_completos", "pessoas"
   add_foreign_key "profissaos", "pessoas"
   add_foreign_key "telefones", "pessoas"

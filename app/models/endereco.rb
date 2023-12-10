@@ -6,4 +6,6 @@ class Endereco < ApplicationRecord
   validates :city, presence: true, length: {minimum: 2, maximum: 100}
   validates :state, presence: true, length: {minimum: 2, maximum: 50}
   validates :country, presence: true, length: {minimum: 2, maximum: 50}
+
+  belongs_to :pessoa
 end

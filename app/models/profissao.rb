@@ -1,3 +1,3 @@
 class Profissao < ApplicationRecord
-  belongs_to :pessoa, inverse_of: :user
+  belongs_to :pessoa
 end
