@@ -1,0 +1,2 @@
+module ProfissaoHelper
+end
