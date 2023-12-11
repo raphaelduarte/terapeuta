@@ -7,6 +7,7 @@ class Pessoa < ApplicationRecord
   has_many :enderecos
   has_one :documento
   has_one :estado_civil
+  has_one :paciente
 
   accepts_nested_attributes_for :nome_completo,
                                 :user,
@@ -15,5 +16,6 @@ class Pessoa < ApplicationRecord
                                 :enderecos,
                                 :documento,
                                 :estado_civil,
-                                :emails
+                                :emails,
+                                :paciente
 end

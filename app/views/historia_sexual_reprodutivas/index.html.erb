@@ -1,0 +1,14 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Historia sexual reprodutivas</h1>
+    <%= link_to "New historia sexual reprodutiva", new_historia_sexual_reprodutiva_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
+
+  <div id="historia_sexual_reprodutivas" class="min-w-full">
+    <%= render @historia_sexual_reprodutivas %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<%= form_with(model: historia_familiar, class: "contents") do |form| %>
+  <% if historia_familiar.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(historia_familiar.errors.count, "error") %> prohibited this historia_familiar from being saved:</h2>
+
+      <ul>
+        <% historia_familiar.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

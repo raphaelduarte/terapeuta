@@ -4,6 +4,5 @@ class UsersBackofficeController < ApplicationController
 
     def new
         @user = User.new
-        @user.build_pessoa
     end
 end

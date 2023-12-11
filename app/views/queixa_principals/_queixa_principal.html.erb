@@ -1,0 +1,7 @@
+<div id="<%= dom_id queixa_principal %>">
+  <% if action_name != "show" %>
+    <%= link_to "Show this queixa principal", queixa_principal, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this queixa principal", edit_queixa_principal_path(queixa_principal), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

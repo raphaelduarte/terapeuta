@@ -1,0 +1,2 @@
+module CpfsHelper
+end

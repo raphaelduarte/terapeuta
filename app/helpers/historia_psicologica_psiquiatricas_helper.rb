@@ -1,0 +1,2 @@
+module HistoriaPsicologicaPsiquiatricasHelper
+end

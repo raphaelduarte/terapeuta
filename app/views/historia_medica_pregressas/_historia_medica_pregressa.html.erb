@@ -1,0 +1,7 @@
+<div id="<%= dom_id historia_medica_pregressa %>">
+  <% if action_name != "show" %>
+    <%= link_to "Show this historia medica pregressa", historia_medica_pregressa, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this historia medica pregressa", edit_historia_medica_pregressa_path(historia_medica_pregressa), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

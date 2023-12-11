@@ -1,0 +1,2 @@
+module QueixaPrincipalsHelper
+end

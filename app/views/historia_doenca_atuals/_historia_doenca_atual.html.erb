@@ -1,0 +1,7 @@
+<div id="<%= dom_id historia_doenca_atual %>">
+  <% if action_name != "show" %>
+    <%= link_to "Show this historia doenca atual", historia_doenca_atual, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this historia doenca atual", edit_historia_doenca_atual_path(historia_doenca_atual), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

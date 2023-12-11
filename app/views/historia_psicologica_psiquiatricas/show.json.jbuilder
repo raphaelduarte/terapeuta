@@ -1,0 +1,1 @@
+json.partial! "historia_psicologica_psiquiatricas/historia_psicologica_psiquiatrica", historia_psicologica_psiquiatrica: @historia_psicologica_psiquiatrica

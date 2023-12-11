@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_10_230643) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_11_114632) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +24,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_10_230643) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "anamneses", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "paciente_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["paciente_id"], name: "index_anamneses_on_paciente_id"
+    t.index ["user_id"], name: "index_anamneses_on_user_id"
   end
 
   create_table "apartamentos", force: :cascade do |t|
@@ -48,12 +57,29 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_10_230643) do
     t.index ["documento_id"], name: "index_cnpjs_on_documento_id"
   end
 
+  create_table "consulta", force: :cascade do |t|
+    t.bigint "paciente_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "data_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["data_id"], name: "index_consulta_on_data_id"
+    t.index ["paciente_id"], name: "index_consulta_on_paciente_id"
+    t.index ["user_id"], name: "index_consulta_on_user_id"
+  end
+
   create_table "cpfs", force: :cascade do |t|
     t.integer "cpf"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "documento_id", null: false
     t.index ["documento_id"], name: "index_cpfs_on_documento_id"
+  end
+
+  create_table "data", force: :cascade do |t|
+    t.datetime "data_completa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "documentos", force: :cascade do |t|
@@ -99,6 +125,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_10_230643) do
     t.string "fatoresMelhoraramOuPioraram"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "anamnese_id", null: false
+    t.index ["anamnese_id"], name: "index_historia_doenca_atuals_on_anamnese_id"
   end
 
   create_table "historia_familiars", force: :cascade do |t|
@@ -106,6 +134,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_10_230643) do
     t.string "historicoDoencasFamilia"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "anamnese_id", null: false
+    t.index ["anamnese_id"], name: "index_historia_familiars_on_anamnese_id"
   end
 
   create_table "historia_medica_pregressas", force: :cascade do |t|
@@ -116,6 +146,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_10_230643) do
     t.string "usoMedicamentos"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "anamnese_id", null: false
+    t.index ["anamnese_id"], name: "index_historia_medica_pregressas_on_anamnese_id"
   end
 
   create_table "historia_psicologica_psiquiatricas", force: :cascade do |t|
@@ -123,6 +155,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_10_230643) do
     t.string "problemasSaudeMental"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "anamnese_id", null: false
+    t.index ["anamnese_id"], name: "index_historia_psicologica_psiquiatricas_on_anamnese_id"
   end
 
   create_table "historia_sexual_reprodutivas", force: :cascade do |t|
@@ -132,6 +166,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_10_230643) do
     t.string "menstruacaoGravidezMenopausa"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "anamnese_id", null: false
+    t.index ["anamnese_id"], name: "index_historia_sexual_reprodutivas_on_anamnese_id"
   end
 
   create_table "nome_completos", force: :cascade do |t|
@@ -149,6 +185,17 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_10_230643) do
     t.string "avisoHorarioEspecifico"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "consulta_id", null: false
+    t.index ["consulta_id"], name: "index_notificacaos_on_consulta_id"
+  end
+
+  create_table "pacientes", force: :cascade do |t|
+    t.bigint "pessoa_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pessoa_id"], name: "index_pacientes_on_pessoa_id"
+    t.index ["user_id"], name: "index_pacientes_on_user_id"
   end
 
   create_table "pagamentos", force: :cascade do |t|
@@ -177,6 +224,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_10_230643) do
     t.string "descricaoSintomas"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "anamnese_id", null: false
+    t.index ["anamnese_id"], name: "index_queixa_principals_on_anamnese_id"
   end
 
   create_table "revisao_habitos", force: :cascade do |t|
@@ -184,12 +233,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_10_230643) do
     t.string "rotinaSono"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "anamnese_id", null: false
+    t.index ["anamnese_id"], name: "index_revisao_habitos_on_anamnese_id"
   end
 
   create_table "revisao_sistemas", force: :cascade do |t|
     t.string "perguntasTodosSistemasCorpo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "anamnese_id", null: false
+    t.index ["anamnese_id"], name: "index_revisao_sistemas_on_anamnese_id"
   end
 
   create_table "telefones", force: :cascade do |t|
@@ -215,14 +268,30 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_10_230643) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "anamneses", "pacientes"
+  add_foreign_key "anamneses", "users"
   add_foreign_key "cnpjs", "documentos"
+  add_foreign_key "consulta", "data", column: "data_id"
+  add_foreign_key "consulta", "pacientes"
+  add_foreign_key "consulta", "users"
   add_foreign_key "cpfs", "documentos"
   add_foreign_key "documentos", "pessoas"
   add_foreign_key "emails", "pessoas"
   add_foreign_key "enderecos", "pessoas"
   add_foreign_key "estado_civils", "pessoas"
+  add_foreign_key "historia_doenca_atuals", "anamneses"
+  add_foreign_key "historia_familiars", "anamneses"
+  add_foreign_key "historia_medica_pregressas", "anamneses"
+  add_foreign_key "historia_psicologica_psiquiatricas", "anamneses"
+  add_foreign_key "historia_sexual_reprodutivas", "anamneses"
   add_foreign_key "nome_completos", "pessoas"
+  add_foreign_key "notificacaos", "consulta", column: "consulta_id"
+  add_foreign_key "pacientes", "pessoas"
+  add_foreign_key "pacientes", "users"
   add_foreign_key "profissaos", "pessoas"
+  add_foreign_key "queixa_principals", "anamneses"
+  add_foreign_key "revisao_habitos", "anamneses"
+  add_foreign_key "revisao_sistemas", "anamneses"
   add_foreign_key "telefones", "pessoas"
   add_foreign_key "users", "pessoas"
 end

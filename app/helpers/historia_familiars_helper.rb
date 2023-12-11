@@ -1,0 +1,2 @@
+module HistoriaFamiliarsHelper
+end

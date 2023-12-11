@@ -1,0 +1,1 @@
+json.array! @historia_psicologica_psiquiatricas, partial: "historia_psicologica_psiquiatricas/historia_psicologica_psiquiatrica", as: :historia_psicologica_psiquiatrica

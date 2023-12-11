@@ -1,0 +1,27 @@
+<div id="<%= dom_id notificacao %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Aviso1hantes:</strong>
+    <%= notificacao.aviso1hAntes %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Aviso23hantes:</strong>
+    <%= notificacao.aviso23hAntes %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Avisohorarioespecifico:</strong>
+    <%= notificacao.avisoHorarioEspecifico %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Consulta:</strong>
+    <%= notificacao.consulta_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this notificacao", notificacao, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this notificacao", edit_notificacao_path(notificacao), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
