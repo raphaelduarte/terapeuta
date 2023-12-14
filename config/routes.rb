@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get 'welcome/index'
   end
   namespace :users_backoffice do
+    resources :pacientes
+    resources :pessoa
     namespace :welcome do
       post 'services/addressAPI', to: 'configuracao#busca_cep'
       post 'services/zapi', to: 'mensagem#envia_mensagem'

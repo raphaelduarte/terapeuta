@@ -1,5 +1,6 @@
-class PacientesController < UsersBackofficeController
+class UsersBackoffice::PacientesController < UsersBackofficeController
   before_action :set_paciente, only: %i[ show edit update destroy ]
+
 
   # GET /pacientes or /pacientes.json
   def index
@@ -13,6 +14,11 @@ class PacientesController < UsersBackofficeController
   # GET /pacientes/new
   def new
     @paciente = Paciente.new
+    @paciente.build_pessoa
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   # GET /pacientes/1/edit
@@ -22,9 +28,11 @@ class PacientesController < UsersBackofficeController
   # POST /pacientes or /pacientes.json
   def create
     @paciente = Paciente.new(paciente_params)
+    @paciente.user = current_user
 
     respond_to do |format|
       if @paciente.save
+        format.turbo_stream { redirect_to pacientes_path }
         format.html { redirect_to paciente_url(@paciente), notice: "Paciente was successfully created." }
         format.json { render :show, status: :created, location: @paciente }
       else
@@ -65,6 +73,8 @@ class PacientesController < UsersBackofficeController
 
     # Only allow a list of trusted parameters through.
     def paciente_params
-      params.require(:paciente).permit(:pessoa_id, :user_id)
+      params.require(:paciente).permit(:pessoa_id,
+                                       :user_id,
+                                       :nome_completos_attributes => [:nome, :sobrenome])
     end
 end
