@@ -1,6 +1,6 @@
 <%= form_with(model: @pessoa) do |form| %>
   <%= form.fields_for :nome_completo do |nc_form| %>
-    <%= render 'users_backoffice/nome_completos/form', nome_completo: nc_form %>
+    <%= render 'users_backoffice/nome_completos/form', f: nc_form %>
   <% end %>
 
   <%= form.fields_for :enderecos do |ende_form| %>

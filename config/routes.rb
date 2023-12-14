@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   namespace :users_backoffice do
     resources :pacientes
-    resources :pessoa
+    resources :pessoas
     namespace :welcome do
       post 'services/addressAPI', to: 'configuracao#busca_cep'
       post 'services/zapi', to: 'mensagem#envia_mensagem'

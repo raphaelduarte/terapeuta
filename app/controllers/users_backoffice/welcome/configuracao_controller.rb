@@ -3,7 +3,7 @@ require 'json'
 class UsersBackoffice::Welcome::ConfiguracaoController < UsersBackofficeController
   def index
     @pessoa = Pessoa.new
-    @pessoa.build_nome_completo
+    
   end
 
   def busca_cep
