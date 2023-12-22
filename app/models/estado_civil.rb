@@ -1,3 +1,3 @@
 class EstadoCivil < ApplicationRecord
-  belongs_to :pessoa
+  belongs_to :pessoas
 end

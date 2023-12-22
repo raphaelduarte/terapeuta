@@ -1,3 +1,3 @@
 class Email < ApplicationRecord
-  belongs_to :pessoa, inverse_of: :user
+  belongs_to :pessoas
 end

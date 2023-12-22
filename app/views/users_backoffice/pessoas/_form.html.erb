@@ -1,19 +1,17 @@
-<%= form_with(model: @pessoa) do |form| %>
-  <%= form.fields_for :nome_completo do |nc_form| %>
-    <%= render 'users_backoffice/nome_completos/form', f: nc_form %>
+<%= form_with(model: @pessoa, url: users_backoffice_pessoas_path, class: "contents") do |form| %>
+  <% if @pessoa.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(pessoa.errors.count, "error") %> prohibited this pessoa from being saved:</h2>
+
+      <ul>
+        <% @pessoa.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 
-  <%= form.fields_for :enderecos do |ende_form| %>
-    <%= render 'users_backoffice/enderecos/form', f: ende_form %>
-  <% end %>
-
-  <%= form.fields_for :estado_civil do |ec_form| %>
-    <%= render 'users_backoffice/estado_civils/form', f: ec_form %>
-  <% end %>
-
-  <%= form.fields_for :telefones do |tel_form| %>
-    <%= render 'users_backoffice/telefones/form', f: tel_form %>
-  <% end %>
-
-  <%= form.submit "Salvar" %>
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
 <% end %>

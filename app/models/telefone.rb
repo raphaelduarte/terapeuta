@@ -1,3 +1,3 @@
 class Telefone < ApplicationRecord
-  belongs_to :pessoa, inverse_of: :user
+  belongs_to :pessoas, inverse_of: :user
 end

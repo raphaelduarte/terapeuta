@@ -2,7 +2,7 @@ require 'rest-client'
 require 'json'
 class UsersBackoffice::Welcome::ConfiguracaoController < UsersBackofficeController
   def index
-    @pessoa = Pessoa.new
+    @pessoa = Pessoas.new
     
   end
 

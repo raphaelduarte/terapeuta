@@ -1,12 +1,13 @@
 class Paciente < ApplicationRecord
-  belongs_to :pessoa, inverse_of: :paciente
+  belongs_to :pessoas
   belongs_to :user
 
-  has_one :anamnese
-  has_many :consultums
+  has_one :anamnese, inverse_of: :paciente
+  has_many :consultums, inverse_of: :paciente
   
 
-  accepts_nested_attributes_for :pessoa
+  accepts_nested_attributes_for :anamnese,
+                                :consultums
 
   before_validation :build_associated_pessoa, on: :create
 

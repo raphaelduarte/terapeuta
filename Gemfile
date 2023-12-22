@@ -33,7 +33,7 @@ gem 'uri'
 
 gem 'net-http'
 
-
+gem 'cocoon'
 
 gem 'ffi', '~> 1.16', '>= 1.16.3'
 

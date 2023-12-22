@@ -75,6 +75,6 @@ class UsersBackoffice::PacientesController < UsersBackofficeController
     def paciente_params
       params.require(:paciente).permit(:pessoa_id,
                                        :user_id,
-                                       :nome_completos_attributes => [:nome, :sobrenome])
+                                       :nome_completos_attributes => [:id, :nome, :sobrenome])
     end
 end
